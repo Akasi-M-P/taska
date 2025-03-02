@@ -94,6 +94,29 @@ function makeNewTaskItem(taskText, taskNumber, taskId) {
 }
 
 /**
+ * Gets the current date formatted as "2nd March, 2025"
+ * @returns {string} - Formatted date string
+ */
+function getCurrentFormattedDate() {
+  const now = new Date();
+  const day = now.getDate();
+  const month = now.toLocaleString("default", { month: "long" });
+  const year = now.getFullYear();
+
+  // Add appropriate suffix to day number
+  let daySuffix = "th";
+  if (day === 1 || day === 21 || day === 31) {
+    daySuffix = "st";
+  } else if (day === 2 || day === 22) {
+    daySuffix = "nd";
+  } else if (day === 3 || day === 23) {
+    daySuffix = "rd";
+  }
+
+  return `${day}${daySuffix} ${month}, ${year}`;
+}
+
+/**
  * What to do when a user starts dragging a task
  */
 function startDragging(event) {
@@ -588,6 +611,10 @@ uiElements.taskForm.addEventListener("submit", handleAddOrUpdateTask);
 document.addEventListener("DOMContentLoaded", function () {
   // Load dark mode preference from storage
   loadDarkModeFromStorage();
+
+  // Update the date display with current date
+  document.getElementById("date").querySelector("p").textContent =
+    getCurrentFormattedDate();
 
   // Load tasks from storage
   loadTasksFromStorage();
