@@ -1,4 +1,3 @@
-// ===== Getting HTML elements we'll need =====
 // This object stores all the HTML elements we use in our app
 const uiElements = {
   // Buttons
