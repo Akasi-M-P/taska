@@ -1,0 +1,114 @@
+// // DECLARE VARIABLES
+// const toggleMode = document.getElementById("mode");
+// const body = document.body;
+// const taskContainer = document.getElementById("container");
+// const lightBulb = document.getElementById("light");
+// const darkBulb = document.getElementById("dark");
+
+// const addTaskBtn = document.getElementById("add-task");
+// const taskForm = document.getElementById("task-form");
+// const taskInput = document.getElementById("task-input");
+// const taskList = document.getElementById("task-list");
+// const clearAllBtn = document.getElementById("clear-all");
+
+// function onAddNewTask(e) {
+//   e.preventDefault();
+
+//   const newTask = taskInput.value;
+//   console.log(newTask);
+
+//   if (!newTask) {
+//     alert("Please add a task");
+//     return;
+//   }
+
+//   const li = document.createElement("li");
+//   li.id = "task";
+
+//   li.textContent = newTask;
+
+//   const numberSpan = document.createElement("span");
+//   numberSpan.id = "number";
+
+//   const editSpan = document.createElement("span");
+//   editSpan.id = "edit";
+//   editSpan.textContent = "edit";
+//   li.appendChild(editSpan);
+
+//   const deleteSpan = document.createElement("span");
+//   deleteSpan.id = "remove-task";
+//   li.appendChild(deleteSpan);
+
+//   const editIcon = document.createElement("i");
+//   editIcon.className = "fa-solid fa-pen-to-square";
+//   editIcon.id = "edit";
+
+//   const deleteIcon = document.createElement("i");
+//   deleteIcon.className = "fa-solid fa-trash";
+//   deleteIcon.id = "remove-task";
+
+//   editSpan.prepend(editIcon);
+//   deleteSpan.appendChild(deleteIcon);
+
+//   li.prepend(numberSpan);
+//   li.appendChild(editSpan);
+//   li.appendChild(deleteSpan);
+
+//   taskList.appendChild(li);
+
+//   clearAllBtn.style.display = "inline-block";
+
+//   taskInput.value = "";
+
+//   numberTasks();
+
+//   deleteIcon.addEventListener("click", () => {
+//     onDeleteTask(li);
+//   });
+// }
+
+// function onDeleteTask(taskElement) {
+//   taskElement.remove();
+//   numberTasks();
+// }
+
+// function clearAllTasks() {
+//   while (taskList.firstChild) {
+//     taskList.removeChild(taskList.firstChild);
+//   }
+//   clearAllBtn.style.display = "none";
+// }
+
+// function numberTasks() {
+//   const tasks = taskList.querySelectorAll("li");
+
+//   tasks.forEach((taskContainer, index) => {
+//     const numberSpan = taskContainer.querySelector("#number");
+
+//     if (numberSpan) {
+//       numberSpan.textContent = `${index + 1}`;
+//     }
+//   });
+// }
+
+// function darkLightMode() {
+//   body.classList.toggle("dark-mode");
+//   taskContainer.style.border = "none";
+
+//   if (body.classList.contains("dark-mode")) {
+//     darkBulb.style.display = "inline-block";
+//     lightBulb.style.display = "none";
+//   } else {
+//     lightBulb.style.display = "inline-block";
+//     darkBulb.style.display = "none";
+//   }
+
+//   taskContainer.style.border = "none";
+// }
+
+// // EVENTLISTENERS
+// addTaskBtn.addEventListener("click", onAddNewTask);
+
+// clearAllBtn.addEventListener("click", clearAllTasks);
+
+// toggleMode.addEventListener("click", darkLightMode);
