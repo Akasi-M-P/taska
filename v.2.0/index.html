@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taska v2 📚</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <section class="welcome-msg">
+        <h1>welcome, peter</h1>
+        <p>what are you doing today?</p>
+      </section>
+      <section class="search-mode">
+        <div>
+          <input
+            type="text"
+            name="search-task"
+            id="search-task"
+            placeholder="search task..."
+          />
+        </div>
+        <!-- LIGHT MODE -->
+        <div>
+          <svg
+            id="light-mode"
+            class="light-mode"
+            data-slot="icon"
+            fill="none"
+            stroke-width="0.5"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            ></path>
+          </svg>
+          <!-- DARK MODE -->
+          <svg
+            id="dark-mode"
+            data-slot="icon"
+            fill="none"
+            stroke-width="0.5"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+            ></path>
+          </svg>
+        </div>
+      </section>
+    </header>
+
+    <ul id="container">
+      <!-- <li id="task">
+        <p>review paper</p>
+        <button id="edit" class="edit-btn">edit</button>
+        <button id="delete" class="delete-btn">delete</button>
+      </li>
+      <li id="task">
+        <p>review paper</p>
+        <button id="edit" class="edit-btn">edit</button>
+        <button id="delete" class="delete-btn">delete</button>
+      </li> -->
+      <!-- <li id="task">
+        <p>review paper</p>
+        <button id="edit" class="edit-btn">edit</button>
+        <button id="delete" class="delete-btn">delete</button>
+      </li>
+      <li id="task">
+        <p>review paper</p>
+        <button id="edit" class="edit-btn">edit</button>
+        <button id="delete" class="delete-btn">delete</button>
+      </li>
+      <li id="task">
+        <p>review paper</p>
+        <button id="edit" class="edit-btn">edit</button>
+        <button id="delete" class="delete-btn">delete</button>
+      </li>
+      <li id="task">
+        <p>review paper</p>
+        <button id="edit" class="edit-btn">edit</button>
+        <button id="delete" class="delete-btn">delete</button>
+      </li>
+      <li id="task">
+        <p>review paper</p>
+        <button id="edit" class="edit-btn">edit</button>
+        <button id="delete" class="delete-btn">delete</button>
+      </li>
+      <li id="task">
+        <p>review paper</p>
+        <button id="edit" class="edit-btn">edit</button>
+        <button id="delete" class="delete-btn">delete</button>
+      </li>
+      <li id="task">
+        <p>review paper</p>
+        <button id="edit" class="edit-btn">edit</button>
+        <button id="delete" class="delete-btn">delete</button>
+      </li>
+       -->
+    </ul>
+
+    <section id="modal">
+      <form id="task-form">
+        <div>
+          <svg
+            class="close-modal"
+            data-slot="icon"
+            fill="none"
+            stroke-width="1.5"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            ></path>
+          </svg>
+        </div>
+        <input
+          type="text"
+          name="task"
+          id="task-input"
+          placeholder="add task..."
+        />
+        <button id="save-task" class="save-btn">save</button>
+      </form>
+    </section>
+    <footer>
+      <button id="clear-all" class="clear-all-btn">clear all</button>
+      <button id="add-task" class="add-btn">add task</button>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

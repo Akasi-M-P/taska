@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --primary-color: hsl(155, 44%, 23%);
+  --secondary-color: hsl(293, 21%, 93%);
+  --primary-font-color: #ffffff;
+  --text-transform: capitalize;
+  --box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  --primary-font: "Sour Gummy", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: var(--primary-font);
+  text-transform: var(--text-transform);
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+input {
+  font-family: var(--primary-font);
+}
+
+button {
+  font-family: var(--primary-font);
+  text-transform: var(--text-transform);
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
+}
+
+#dark {
+  display: none;
+}
+
+/* DARK MODE */
+.dark-mode {
+  background-color: rgb(32, 32, 37);
+  color: #fffffe;
+}
+
+.dark-mode header {
+  background-color: rgb(26, 24, 44);
+  color: white;
+}
+
+.dark-mode .modal-content {
+  background-color: rgb(32, 32, 37);
+}
+
+.dark-mode #task-form input {
+  background-color: rgb(32, 32, 37);
+  color: #fffffe;
+}
+
+.dark-mode .form-control {
+  background-color: rgb(32, 32, 37);
+}
+
+.dark-mode .btn-close {
+  background-color: #fffffe;
+}
+
+.modal-dialog {
+  font-family: var(--primary-font);
+}
+
+#task-form input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  text-transform: var(--text-transform);
+}
+
+.hide {
+  display: none;
+}
+
+.edit-task {
+  color: rgb(190, 179, 179);
+}
+
+.dragging {
+  opacity: 0.5;
+  background-color: #f0f0f0;
+  border-style: dashed;
+}
+/* MOBILE SCREENS*/
+@media (max-width: 767px) {
+  /* HEADER */
+  header {
+    height: 150px;
+    margin: auto;
+    padding: 10px;
+    color: var(--primary-font-color);
+    background-color: var(--primary-color);
+    display: flex;
+    gap: 20px;
+    position: relative;
+  }
+
+  .search {
+    position: absolute;
+    bottom: 10px;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #search-task {
+    width: 80%;
+    padding: 15px;
+    text-transform: var(--text-transform);
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .search-icon {
+    font-size: 30px;
+  }
+
+  .wlc-search {
+    width: 60%;
+  }
+
+  .mode-date {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #date {
+    font-size: 14px;
+  }
+
+  #dark-light-mode {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+  }
+
+  /* BODY CONTAINER */
+  #container {
+    width: 95vw;
+    height: 450px;
+    border: 1px solid rgb(228, 224, 224);
+    margin: 20px auto;
+    overflow: auto;
+    scroll-behavior: smooth;
+    box-shadow: var(--box-shadow);
+  }
+
+  #task-list {
+    list-style: none;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #task {
+    padding: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    font-weight: bold;
+  }
+
+  #edit {
+    color: green;
+  }
+
+  #remove-task {
+    color: red;
+  }
+
+  #clear-add {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #clear-add button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .clear {
+    background-color: red;
+    color: #ffffff;
+  }
+
+  .add {
+    color: #ffffff;
+    background-color: green;
+    width: 150px;
+  }
+}
+
+/* TABLET SCREENS */
+@media (min-width: 768px) and (max-width: 1024px) {
+  header {
+    height: 180px;
+    margin: auto;
+    padding: 20px;
+    color: var(--primary-font-color);
+    background-color: var(--primary-color);
+    display: flex;
+    gap: 20px;
+    position: relative;
+  }
+
+  .search {
+    position: absolute;
+    bottom: 20px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #search-task {
+    width: 80%;
+    padding: 15px;
+    text-transform: var(--text-transform);
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+
+  .search-icon {
+    font-size: 40px;
+  }
+
+  .wlc-search {
+    width: 60%;
+    font-size: 18px;
+  }
+
+  .mode-date {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #date {
+    font-size: 18px;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 5px 20px;
+  }
+
+  #dark-light-mode {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+  }
+
+  #dark-light-mode i {
+    font-size: 24px;
+  }
+
+  /* BODY CONTAINER */
+  #container {
+    width: 95vw;
+    height: 600px;
+    border: 1px solid rgb(228, 224, 224);
+    margin: 20px auto;
+    overflow: auto;
+    scroll-behavior: smooth;
+    box-shadow: var(--box-shadow);
+  }
+
+  #task-list {
+    list-style: none;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  #task {
+    padding: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    font-weight: bold;
+  }
+
+  #edit {
+    color: green;
+  }
+
+  #remove-task {
+    color: red;
+  }
+
+  #clear-add {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #clear-add button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+  }
+
+  .clear {
+    background-color: red;
+    color: #ffffff;
+  }
+
+  .add {
+    color: #ffffff;
+    background-color: green;
+    width: 120px;
+  }
+}
+
+/* DESKTOP DEVICES */
+@media (min-width: 1025px) {
+  header {
+    height: 200px;
+    margin: auto;
+    padding: 20px;
+    color: var(--primary-font-color);
+    background-color: var(--primary-color);
+    display: flex;
+    gap: 20px;
+    position: relative;
+  }
+
+  .search {
+    position: absolute;
+    bottom: 10px;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #search-task {
+    width: 80%;
+    padding: 15px;
+    text-transform: var(--text-transform);
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+
+  .search-icon {
+    font-size: 40px;
+  }
+
+  .wlc-search {
+    width: 60%;
+    font-size: 24px;
+  }
+
+  .mode-date {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #date {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 5px 20px;
+  }
+
+  #dark-light-mode {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+  }
+
+  #dark-light-mode i {
+    font-size: 24px;
+  }
+
+  /* BODY CONTAINER */
+  #container {
+    width: 95vw;
+    height: 600px;
+    border: 1px solid rgb(228, 224, 224);
+    margin: 20px auto;
+    overflow: auto;
+    scroll-behavior: smooth;
+    box-shadow: var(--box-shadow);
+  }
+
+  #task-list {
+    list-style: none;
+    padding: 20px;
+    font-size: 24px;
+  }
+
+  #task {
+    padding: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    font-weight: bold;
+  }
+
+  #edit {
+    color: green;
+  }
+
+  #remove-task {
+    color: red;
+  }
+
+  #clear-add {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #clear-add button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+  }
+
+  .clear {
+    background-color: red;
+    color: #ffffff;
+  }
+
+  .add {
+    color: #ffffff;
+    background-color: green;
+    width: 120px;
+  }
+}
+
+/* Custom Scrollbar Class */
+#container {
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #37ad8a #85ca96; /* Firefox: thumb and track colors */
+}
+
+/* WebKit Browsers (Chrome, Safari, Edge) */
+#container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+#container::-webkit-scrollbar-thumb {
+  background-color: #158035; /* Color of the thumb */
+  border-radius: 4px; /* Rounded corners */
+}
+
+#container::-webkit-scrollbar-track {
+  background-color: #0a8d0a; /* Color of the track */
+}
+
+#container::-webkit-scrollbar-thumb:hover {
+  background-color: #37ad8a; /* Darker color on hover */
+}
+
+#container::-webkit-scrollbar-corner {
+  background-color: transparent; /* Transparent corner */
+}

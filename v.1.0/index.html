@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taska 📝</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/9da87e2b4e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <section class="wlc-search">
+          <div class="welc-msg">
+            <p>Hello, <span id="user-name"></span></p>
+            <p>What are you doing today?</p>
+          </div>
+          <div class="search">
+            <i class="fa-brands fa-searchengin search-icon"></i>
+            <input id="search-task" type="text" placeholder="search task..." />
+          </div>
+        </section>
+        <section class="mode-date">
+          <div id="dark-light-mode">
+            <span id="mode">
+              <i class="fa-regular fa-lightbulb" id="light"></i>
+              <i class="fa-solid fa-lightbulb" id="dark"></i>
+            </span>
+          </div>
+          <div id="date"><p>25th February, 2025</p></div>
+        </section>
+      </header>
+      <section id="container">
+        <ul id="task-list">
+          <!-- <li id="task">
+            <span id="number">1</span>
+            submit project work
+            <span id="edit " class="edit-task"
+              ><i class="fa-solid fa-pen-to-square"></i> edit</span
+            >
+            <span id="remove-task"><i class="fa-solid fa-trash"></i></span>
+          </li>
+          <li id="task">
+            <span id="number">2</span>
+            prepare lecture slides
+            <span id="edit" class="edit-task"
+              ><i class="fa-solid fa-pen-to-square"></i> edit</span
+            >
+            <span id="remove-task"><i class="fa-solid fa-trash"></i></span>
+          </li>
+          <li id="task">
+            <span id="number">3</span>
+            review paper
+            <span id="edit" class="edit-task"
+              ><i class="fa-solid fa-pen-to-square"></i> edit</span
+            >
+            <span id="remove-task"><i class="fa-solid fa-trash"></i></span>
+          </li>
+          <li id="task">
+            <span id="number">4</span>
+            attend conference meeting
+            <span id="edit" class="edit-task"
+              ><i class="fa-solid fa-pen-to-square"></i> edit</span
+            >
+            <span id="remove-task"><i class="fa-solid fa-trash"></i></span>
+          </li>
+          <li id="task">
+            <span id="number">5</span>
+            conduct lesson
+            <span id="edit" class="edit-task"
+              ><i class="fa-solid fa-pen-to-square"></i> edit</span
+            >
+            <span id="remove-task"><i class="fa-solid fa-trash"></i></span>
+          </li> -->
+        </ul>
+      </section>
+      <section id="clear-add">
+        <button id="clear-all" class="clear">clear all</button>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="add"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          <i class="fa-solid fa-plus"></i> add
+        </button>
+      </section>
+
+      <!-- Modal -->
+      <div
+        class="modal"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Enter task
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="task-form">
+                <div class="form-control">
+                  <input
+                    type="text"
+                    id="task-input"
+                    class="form-input"
+                    name="task"
+                    placeholder="add task..."
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                id="add-task"
+                class="btn btn-success"
+                type="submit"
+                class="add-item-btn"
+              >
+                Add Item
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
